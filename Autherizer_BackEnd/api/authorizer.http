@@ -1,0 +1,47 @@
+@baseURL = https://localhost:7000/api
+
+### GET all authorizers
+GET {{baseURL}}/authorizers
+
+### GET an authorizer by ID
+GET {{baseURL}}/authorizers/john-doe
+
+### GET an authorizer with INVALID ID
+GET {{baseURL}}/authorizers/INVALID_ID
+
+### POST a new authorizer
+POST {{baseURL}}/authorizers
+Content-Type: application/json
+
+{
+    "Authorizer_ID": "john-doe",
+    "name": "John Doe",
+    "username": "john_doe",
+    "password": "securePassword123",
+    "email": "john.doe@example.com",
+    "phone_Number": "9876543210"
+  }
+
+### POST a new authorizer
+POST {{baseURL}}/authorizers
+Content-Type: application/json
+
+{
+    "Authorizer_ID": "jane-smith",
+    "name": "Jane Smith",
+    "username": "jane_smith",
+    "password": "anotherSecurePass456",
+    "email": "jane.smith@example.com",
+    "phone_Number": "9998887776"
+}
+
+### DELETE the authorizer by ID
+DELETE {{baseURL}}/authorizers/john-doe
+
+### PUT to update the authorizer details
+PUT {{baseURL}}/authorizers/john-doe
+Content-Type: application/json
+
+{
+    "email": "auth1@example.com"
+}

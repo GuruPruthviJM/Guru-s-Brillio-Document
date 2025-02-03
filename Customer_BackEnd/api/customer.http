@@ -1,0 +1,50 @@
+@baseURL = https://localhost/api
+
+### GET all customers
+GET {{baseURL}}/customers
+
+### GET a customer by ID
+GET {{baseURL}}/customers/guru-pruthvi
+
+### GET a customer with INVALID ID
+GET {{baseURL}}/customers/INVALID_ID
+
+
+### POST a new customer
+POST {{baseURL}}/customers
+Content-Type: application/json
+
+{
+    "email": "guru@example.com",
+    "password": "securePass123",
+    "username": "guru pruthvi",
+    "phone_Number": "9876543210",
+    "name": "Guru Pruthvi"
+}
+
+### POST a new Different Customer
+POST {{baseURL}}/customers
+Content-Type: application/json
+
+{
+    "email": "pruthvi@example.com",
+    "password": "securePass456",
+    "username": "pruthvi-guru",
+    "phone_Number": "9999999999",
+    "name": "Pruthvi Guru"
+}
+
+
+### Delete the customer by id
+DELETE {{baseURL}}/customers/guru-pruthvi
+
+
+### PUT to update the customer Details
+PUT {{baseURL}}/customers/guru-pruthvi
+Content-Type: application/json
+
+{
+    "email": "guru@example.com",
+    "password": "securePass",
+    "username": "guru pruthvi"
+}
