@@ -25,10 +25,12 @@ const createRouter = () => {
      router
      .route('/:id/payments')
      .get(routeHandler(paymentControl.getPaymentsByCustomerId))
+     .post(routeHandler(paymentControl.addPayment));
     
     router
         .route('/:id/tickets')
         .get(routeHandler(ticketControl.getTicketByCustId))
+        .post(routeHandler(ticketControl.addTicket));
 
     return router;
 }

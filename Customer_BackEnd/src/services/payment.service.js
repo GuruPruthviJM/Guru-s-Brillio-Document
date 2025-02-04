@@ -24,7 +24,7 @@ class PaymentService {
     }
 
     async getPaymentsByCustomerId(custId) {
-        return await this.paymentRepository.paymentHistory({ customerID: custId });
+        return await this.paymentRepository.paymentHistory({ customerId: custId });
     }
 }
 

@@ -9,8 +9,29 @@ GET {{baseURL}}/customers/guru-pruthvi
 ### GET a payment by particular customer
 GET {{baseURL}}/customers/guru-pruthvi/payments
 
+### POST a payment by particular customer
+POST {{baseURL}}/customers/guru-pruthvi/payments
+Content-Type: application/json
+
+{
+    "amount": 1000
+}
+
 ### GET a ticket raised by a customer
 GET {{baseURL}}/customers/guru-pruthvi/tickets
+
+### POST a ticket raised by a customer
+POST  {{baseURL}}/customers/guru-pruthvi/tickets
+Content-Type: application/json
+
+{
+    "ticketId": "TICKET123",
+    "employeeId": "EMP001",
+    "ticketType": "Technical Issue",
+    "ticketDescription": "Unable to access the dashboard.",
+    "ticketStatus": "PENDING",
+    "ticketPriority": "HIGH"
+}
 
 
 ### GET a customer with INVALID ID

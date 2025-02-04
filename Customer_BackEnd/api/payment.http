@@ -16,7 +16,7 @@ Content-Type: application/json
 {
     "amount": 1200,
     "paymentMethod": "PayPal",
-    "customerID": "cus-123",  
+    "customerId": "guru-pruthvi",  
     "status": "Pending"
 }
 
@@ -28,7 +28,7 @@ Content-Type: application/json
 {
     "amount": 1800,
     "paymentMethod": "PayPal",
-    "customerID": "cus-345",  
+    "customerId": "pruthvi-guru",  
     "status": "Pending"
 }
 

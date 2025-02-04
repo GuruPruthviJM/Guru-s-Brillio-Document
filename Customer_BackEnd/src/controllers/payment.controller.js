@@ -11,7 +11,10 @@ const paymentController = () => {
         return await paymentService.getPaymentById(id);
     }
 
-    const addPayment = async ({ body }) => {
+    const addPayment = async ({ id, body }) => {
+        if (id) {
+            body = {...body, customerId: id}
+        }
         return await paymentService.createPayment(body);
     }
 

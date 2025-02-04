@@ -6,8 +6,18 @@ class MongoosePaymentRepository extends MongooseRepository{
         this.model = model;
     }
 
-    async paymentHistory(matcher = {}) {
-        return await this.model.find(matcher).populate('customerID')
+    async paymentHistory(matcher = {}) {    
+        console.log(matcher); // matcher= {customerId: "guru-pruthvi"}
+
+        return this.model.find(matcher)
+        .populate({ 
+            path: 'customerId',
+            model: 'customer', 
+            localField: 'customerId', 
+            foreignField: 'customerID',
+            });
+
+        // return await this.model.find({}).populate('customerID')
     }
 }
 

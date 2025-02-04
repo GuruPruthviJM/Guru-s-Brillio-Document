@@ -11,7 +11,10 @@ const ticketController = () => {
         return await ticketService.getTicketById(id);
     };
 
-    const addTicket = async ({ body }) => {
+    const addTicket = async ({ id, body }) => {
+        if(id){
+            body={...body, customerId: id};
+        }
         return await ticketService.createTicket(body);
     };
 
