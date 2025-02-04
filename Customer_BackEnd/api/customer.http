@@ -6,9 +6,15 @@ GET {{baseURL}}/customers
 ### GET a customer by ID
 GET {{baseURL}}/customers/guru-pruthvi
 
+### GET a payment by particular customer
+GET {{baseURL}}/customers/guru-pruthvi/payments
+
+### GET a ticket raised by a customer
+GET {{baseURL}}/customers/guru-pruthvi/tickets
+
+
 ### GET a customer with INVALID ID
 GET {{baseURL}}/customers/INVALID_ID
-
 
 ### POST a new customer
 POST {{baseURL}}/customers

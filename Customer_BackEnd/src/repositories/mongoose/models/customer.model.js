@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const customerSchema = new mongoose.Schema({
-  CUS_ID: { type: String, unique: true },   
+  customerID: { type: String, unique: true },   
   name: { type: String, required: true },             
   phone_Number: { type: String, required: true, unique: true }, 
   username: { type: String, unique: true, required: true}, 
@@ -10,9 +10,9 @@ const customerSchema = new mongoose.Schema({
 }, {timestamps: true}); 
 
 customerSchema.pre('save', function(next) {
-  if (!this.CUS_ID) {
+  if (!this.customerID) {
     // Generate CUS_ID from username (lowercase and joined with '-')
-    this.CUS_ID = this.username.toLowerCase().replace(/\s+/g, '-');
+    this.customerID = this.username.toLowerCase().replace(/\s+/g, '-');
   }
   next();
 });

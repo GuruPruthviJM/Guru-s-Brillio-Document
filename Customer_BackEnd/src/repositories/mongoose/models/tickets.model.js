@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
+const customer = require('./customer.model');
 
 const ticketSchema = new mongoose.Schema({
-  ticketId: { type: String, required: true },  
-  customerId: { type: String, required: true }, 
+  ticketId: { type: String, required: true, unique: true},  
+  customerId: { type: String, ref: customer, required: true }, 
   employeeId: { type: String }, 
   ticketType: { type: String, required: true }, 
   ticketDescription: { type: String }, 

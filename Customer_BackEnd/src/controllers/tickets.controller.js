@@ -23,12 +23,17 @@ const ticketController = () => {
         return await ticketService.deleteTicket(id);
     };
 
+    const getTicketByCustId = async ({ id }) => {
+        return await ticketService.getTicketByCustId(id);
+    };
+
     return {
         getAllTickets,
         getTicketById,
         addTicket,
         updateTicket,
         deleteTicket,
+        getTicketByCustId,
     };
 };
 

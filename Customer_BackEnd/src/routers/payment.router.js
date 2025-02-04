@@ -18,6 +18,8 @@ const createRouter = () => {
         .put(routeHandler(controller.updatePayment))
         .delete(routeHandler(controller.deletePayment));
 
+    
+
     return router;
 }
 

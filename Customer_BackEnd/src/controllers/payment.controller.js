@@ -23,12 +23,17 @@ const paymentController = () => {
         return await paymentService.deletePayment(id);
     }
 
+    const getPaymentsByCustomerId = async ({ id }) => {
+        return await paymentService.getPaymentsByCustomerId(id);
+    }
+
     return {
         getAllPayments,
         getPaymentById,
         addPayment,
         updatePayment,
         deletePayment,
+        getPaymentsByCustomerId,
     }
 }
 

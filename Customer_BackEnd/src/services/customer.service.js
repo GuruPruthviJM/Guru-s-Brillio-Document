@@ -8,7 +8,7 @@ class CustomerService{
     } 
 
     async getCustomerById(id){
-        return await this.customerRepository.findOne({CUS_ID: id});
+        return await this.customerRepository.findOne({customerID: id});
     }
   
     async createCustomer(customer){
@@ -16,11 +16,11 @@ class CustomerService{
     }
 
     async updateCustomer(id, customerData){
-        return await this.customerRepository.update({CUS_ID: id}, customerData);
+        return await this.customerRepository.update({customerID: id}, customerData);
     }
 
     async deleteCustomer(id){
-        return await this.customerRepository.remove({CUS_ID: id});
+        return await this.customerRepository.remove({customerID: id});
     }
 }
 

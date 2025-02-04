@@ -22,6 +22,10 @@ class PaymentService {
     async deletePayment(id) {
         return await this.paymentRepository.remove({ PAY_ID: id });
     }
+
+    async getPaymentsByCustomerId(custId) {
+        return await this.paymentRepository.paymentHistory({ customerID: custId });
+    }
 }
 
 PaymentService._dependencies = ['paymentRepository'];
