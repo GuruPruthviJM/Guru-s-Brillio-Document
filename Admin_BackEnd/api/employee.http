@@ -4,7 +4,7 @@
 GET {{baseURL}}/employees
 
 ### GET an employee by ID
-GET {{baseURL}}/employees/EMP002
+GET {{baseURL}}/employees/david-lee
 
 ### GET an employee with INVALID ID
 GET {{baseURL}}/employees/INVALID_ID
@@ -14,20 +14,18 @@ POST {{baseURL}}/employees
 Content-Type: application/json
 
 {
-    "EMPLOYEE_ID": "EMP001",
-    "EMPLOYEE_MANAGERID": "MGR001",
-    "EMPLOYEE_FIRSTNAME": "John",
-    "EMPLOYEE_LASTNAME": "Doe",
-    "EMPLOYEE_DESIGNATION": "Software Engineer",
-    "EMPLOYEE_DEPARTMENT": "Engineering",
-    "EMPLOYEE_GENDER": "MALE",
-    "EMPLOYEE_DATEOFBIRTH": "1990-05-15",
-    "EMPLOYEE_DATEOFJOINING": "2021-01-10",
-    "EMPLOYEE_TAKEHOME": 50000,
-    "EMPLOYEE_EMAIL": "john.doe@example.com",
-    "EMPLOYEE_PHONENO": "9876543210",
-    "EMPLOYEE_PASSWORD": "securePassword123"
-}
+    "name": "Emily Jackson",
+    "managerId": "manager-101",
+    "designation": "UI/UX Designer",
+    "department": "Design",
+    "gender": "FEMALE",
+    "dateOfBirth": "1993-03-12T00:00:00Z",
+    "dateOfJoining": "2019-07-22T00:00:00Z",
+    "salary": 72000,
+    "email": "emily.jackson@example.com",
+    "phoneNo": "+14085551234",
+    "password": "designPass2024"
+  }
 
 
 
@@ -37,29 +35,27 @@ POST {{baseURL}}/employees
 Content-Type: application/json
 
 {
-    "EMPLOYEE_ID": "EMP002",
-    "EMPLOYEE_MANAGERID": "MGR001",
-    "EMPLOYEE_FIRSTNAME": "Jane",
-    "EMPLOYEE_LASTNAME": "Smith",
-    "EMPLOYEE_DESIGNATION": "Project Manager",
-    "EMPLOYEE_DEPARTMENT": "Operations",
-    "EMPLOYEE_GENDER": "FEMALE",
-    "EMPLOYEE_DATEOFBIRTH": "1985-08-22",
-    "EMPLOYEE_DATEOFJOINING": "2018-06-12",
-    "EMPLOYEE_TAKEHOME": 70000,
-    "EMPLOYEE_EMAIL": "jane.smith@example.com",
-    "EMPLOYEE_PHONENO": "9988776655",
-    "EMPLOYEE_PASSWORD": "securePassword456"
-}
+    "name": "David Lee",
+    "managerId": "manager-102",
+    "designation": "DevOps Engineer",
+    "department": "IT",
+    "gender": "MALE",
+    "dateOfBirth": "1988-12-05T00:00:00Z",
+    "dateOfJoining": "2017-04-18T00:00:00Z",
+    "salary": 85000,
+    "email": "david.lee@example.com",
+    "phoneNo": "+14086667890",
+    "password": "opsSecure123"
+  }
 
 
 ### Delete the employee by ID
-DELETE {{baseURL}}/employees/EMP002
+DELETE {{baseURL}}/employees/david-lee
 
 ### PUT to update the employee Details
-PUT {{baseURL}}/employees/EMP001
+PUT {{baseURL}}/employees/david-lee
 Content-Type: application/json
 
 {
-    "EMPLOYEE_TAKEHOME": 60000
+    "salary": 60000
 }

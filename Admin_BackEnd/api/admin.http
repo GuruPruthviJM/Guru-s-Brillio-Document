@@ -4,7 +4,7 @@
 GET {{baseURL}}/admins
 
 ### GET an admin by ID
-GET {{baseURL}}/admins/admin12345
+GET {{baseURL}}/admins/admin12346
 
 ### GET an admin with INVALID ID
 GET {{baseURL}}/admins/INVALID_ID
@@ -14,7 +14,7 @@ POST {{baseURL}}/admins
 Content-Type: application/json
 
 {
-    "Admin_ID": "admin12345",
+    "Admin_ID": "admin12346",
     "email": "guru@example.com",
     "password": "securePass123",
     "username": "guru_pruthvi",
@@ -41,7 +41,7 @@ Content-Type: application/json
 DELETE {{baseURL}}/admins/admin12345
 
 ### PUT to update the admin details
-PUT {{baseURL}}/admins/admin12345 
+PUT {{baseURL}}/admins/admin12346 
 Content-Type: application/json
 
 {
@@ -50,3 +50,6 @@ Content-Type: application/json
     "username": "guru_pruthvi",
     "department": "operations"
 }
+
+### GET all the employees
+GET {{baseURL}}/admins/admin67890/employee
