@@ -51,8 +51,13 @@ const createRouter = () => {
         .get(routeHandler(employeeControl.getEmployeeById))
     
     //admin routes
+    router
+        .route('/:authId/admin')
+        .get(routeHandler(adminControl.getAllAdmins))
     
-    
+    router
+        .route('/:authId/admin/:id')
+        .get(routeHandler(adminControl.getAdminById))
 
     return router;
 }
