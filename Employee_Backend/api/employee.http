@@ -9,6 +9,19 @@ GET {{baseURL}}/employees/john-doe
 ### GET an employee by ID with tickets
 GET {{baseURL}}/employees/john-doe/tickets
 
+### GET an employee by ID with tickets
+GET {{baseURL}}/employees/john-doe/tickets/TICKET456
+
+### PUT an employee by ID with ticket update
+PUT {{baseURL}}/employees/john-doe/tickets/TICKET456
+Content-Type: application/json
+
+{
+    "ticketStatus": "PENDING",
+    "ticketPriority": "MEDIUM"
+}
+
+
 ### GET an employee with INVALID ID
 GET {{baseURL}}/employees/INVALID_ID
 

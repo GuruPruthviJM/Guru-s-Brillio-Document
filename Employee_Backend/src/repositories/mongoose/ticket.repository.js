@@ -3,11 +3,10 @@ const { MongooseRepository } = require("ca-webutils");
 class MongooseTicketRepository extends MongooseRepository{
     constructor(model){
         super(model);
+        this.model=model;
     }
 
     async getTicketByEmpId(matcher = {}) {
-        console.log(matcher); // matcher= {customerId: "guru-pruthvi"}
-
         return this.model.find(matcher)
         .populate({ 
             path: 'employeeId',
@@ -15,8 +14,11 @@ class MongooseTicketRepository extends MongooseRepository{
             localField: 'employeeId', 
             foreignField: 'employeeId',
             });
+    }
 
-        // return await this.model.find({}).populate('customerID')
+    async getEmployeeSpecificTicketId(matcher = {}) {
+        let ticketsBySpecificEmp = await this.getTicketByEmpId({employeeId: matcher.employeeId})
+        return ticketsBySpecificEmp.find(ticket=> ticket.ticketId === matcher.ticketId);
     }
 } 
 

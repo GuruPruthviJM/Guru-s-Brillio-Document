@@ -25,9 +25,10 @@ const createRouter = () => {
     
     router
         .route('/:empId/tickets/:id')
-        .get(routeHandler(ticketControll.getEmployeeSpecificId))
+        .get(routeHandler(ticketControll.getEmployeeSpecificTicketId))
+        .put(routeHandler(ticketControll.updateTicket))
 
-    // Pending We need to update the single ticket id with the required status
+    // Pending We need to print the manager and their collegues
 
     return router;
 }

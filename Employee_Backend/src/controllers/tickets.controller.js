@@ -4,6 +4,7 @@ const ticketController = () => {
     const ticketService = injector.getService('ticketService');
 
     const getAllTickets = async () => {
+        console.log("Hi"); // Changed on 5/2/2025
         return await ticketService.getAllTickets();
     };
 
@@ -28,7 +29,7 @@ const ticketController = () => {
     };
 
     const getEmployeeSpecificTicketId = async ({empId, id }) => {
-        return await ticketService.getEmployeeSpecificTicketId()
+        return await ticketService.getEmployeeSpecificTicketId(empId, id)
     }
 
     return {
@@ -37,7 +38,8 @@ const ticketController = () => {
         addTicket,
         updateTicket,
         deleteTicket,
-        getTicketByEmpId
+        getTicketByEmpId,
+        getEmployeeSpecificTicketId
     };
 };
 

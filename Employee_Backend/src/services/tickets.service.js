@@ -26,6 +26,10 @@ class TicketService {
     async getTicketByEmpId(id){
         return await this.ticketRepository.getTicketByEmpId({employeeId: id});
     }
+
+    async getEmployeeSpecificTicketId(empId, id){
+        return await this.ticketRepository.getEmployeeSpecificTicketId({employeeId: empId, ticketId: id});
+    }
 }
 
 TicketService._dependencies = ['ticketRepository'];

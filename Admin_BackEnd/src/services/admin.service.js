@@ -8,7 +8,7 @@ class AdminService {
     }
 
     async getAdminById(id) {
-        return await this.adminRepository.findOne({ ADMIN_ID: id });
+        return await this.adminRepository.findOne({ Admin_ID: id });
     }
 
     async createAdmin(admin) {
@@ -16,11 +16,11 @@ class AdminService {
     }
 
     async updateAdmin(id, adminData) {
-        return await this.adminRepository.update({ ADMIN_ID: id }, adminData);
+        return await this.adminRepository.update({ Admin_ID: id }, adminData);
     }
 
     async deleteAdmin(id) {
-        return await this.adminRepository.remove({ ADMIN_ID: id });
+        return await this.adminRepository.remove({ Admin_ID: id });
     }
 }
 

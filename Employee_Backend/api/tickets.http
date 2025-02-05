@@ -1,10 +1,10 @@
-@baseURL = https://localhost/api
+@baseURL = https://localhost:8000/api
 
 ### GET all tickets
 GET {{baseURL}}/tickets
 
 ### GET a ticket by ID
-GET {{baseURL}}/tickets/TICKET123
+GET {{baseURL}}/tickets/TICKET456
 
 ### GET a ticket with INVALID ID
 GET {{baseURL}}/tickets/INVALID_ID
@@ -41,12 +41,10 @@ Content-Type: application/json
 DELETE {{baseURL}}/tickets/TICKET123
 
 ### PUT to update the ticket details
-PUT {{baseURL}}/tickets/TICKET123
+PUT {{baseURL}}/tickets/TICKET456
 Content-Type: application/json
 
 {
-    "ticketType": "Technical Issue",
-    "ticketDescription": "Issue resolved, system is now accessible.",
-    "ticketStatus": "CLOSED",
-    "ticketPriority": "LOW"
+    "ticketStatus": "PENDING",
+    "ticketPriority": "MEDIUM"
 }
