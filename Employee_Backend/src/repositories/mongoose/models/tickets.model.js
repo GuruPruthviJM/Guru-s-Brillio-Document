@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
+const employee = require('./employee.model');
 
 const ticketSchema = new mongoose.Schema({
   ticketId: { type: String, required: true }, 
   customerId: { type: String, required: true }, 
-  employeeId: { type: String }, 
+  employeeId: { type: String, ref: employee}, 
   ticketType: { type: String, required: true }, 
   ticketDescription: { type: String }, 
   ticketRaiseDate: { type: Date, required: true, default: Date.now}, 

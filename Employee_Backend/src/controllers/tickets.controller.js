@@ -23,12 +23,21 @@ const ticketController = () => {
         return await ticketService.deleteTicket(id);
     };
 
+    const getTicketByEmpId = async ({ id }) => {
+        return await ticketService.getTicketByEmpId(id);
+    };
+
+    const getEmployeeSpecificTicketId = async ({empId, id }) => {
+        return await ticketService.getEmployeeSpecificTicketId()
+    }
+
     return {
         getAllTickets,
         getTicketById,
         addTicket,
         updateTicket,
         deleteTicket,
+        getTicketByEmpId
     };
 };
 

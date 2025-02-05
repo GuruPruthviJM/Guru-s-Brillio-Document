@@ -22,6 +22,10 @@ class TicketService {
     async deleteTicket(id) {
         return await this.ticketRepository.remove({ ticketId: id });
     }
+
+    async getTicketByEmpId(id){
+        return await this.ticketRepository.getTicketByEmpId({employeeId: id});
+    }
 }
 
 TicketService._dependencies = ['ticketRepository'];

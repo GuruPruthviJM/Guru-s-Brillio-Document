@@ -8,7 +8,7 @@ class EmployeeService {
     }
 
     async getEmployeeById(id) {
-        return await this.employeeRepository.findOne({ EMPLOYEE_ID: id });
+        return await this.employeeRepository.findOne({ employeeId: id });
     }
 
     async createEmployee(employee) {
@@ -16,11 +16,11 @@ class EmployeeService {
     }
 
     async updateEmployee(id, employeeData) {
-        return await this.employeeRepository.update({ EMPLOYEE_ID: id }, employeeData);
+        return await this.employeeRepository.update({ employeeId: id }, employeeData);
     }
 
     async deleteEmployee(id) {
-        return await this.employeeRepository.remove({ EMPLOYEE_ID: id });
+        return await this.employeeRepository.remove({ employeeId: id });
     }
 }
 
